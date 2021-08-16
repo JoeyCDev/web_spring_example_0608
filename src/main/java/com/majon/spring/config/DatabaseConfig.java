@@ -1,27 +1,19 @@
-package com.majon.spring;
-
-import java.io.IOException;
+package com.majon.spring.config;
 
 import javax.sql.DataSource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
-@SpringBootApplication
-//@MapperScan(basePackages = "com.majon.spring.*")
-public class SpringExampleApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(SpringExampleApplication.class, args);
-	}
+@Configuration
+@MapperScan(basePackages = "com.majon.spring.*")
+public class DatabaseConfig {
 	
-	/*
 	@Bean
 	public SqlSessionFactory sqlSessionFactory(DataSource datasource) throws Exception {
 		
@@ -33,6 +25,5 @@ public class SpringExampleApplication {
 		
 		return sessionFactory.getObject();
 	}
-	*/
 
 }
