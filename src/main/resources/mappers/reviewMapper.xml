@@ -23,4 +23,50 @@
  			`id` = #{id}
  	
  	</select> 
+ 	
+ 	<insert id = "insertReview" parameterType="map">
+ 	INSERT INTO
+ 		`new_review`
+ 	(
+ 		`storeId`
+ 		,`menu`
+ 		,`userName`
+ 		,`point`
+ 		,`review`
+ 		,`createdAt`
+ 		,`updatedAt`
+ 	) VALUES (
+ 		#{storeId}
+ 		,#{menu}
+ 		,#{userName}
+ 		,#{point}
+ 		,#{review}
+ 		,now()
+ 		,now()
+ 	)
+ 	</insert>
+ 	
+ 	
+ 	<insert id="insertReviewAsObject" parameterType="com.majon.spring.lesson03.model.Review">
+ 	INSERT INTO
+ 		`new_review`
+ 	(
+ 		`storeId`
+ 		,`menu`
+ 		,`userName`
+ 		,`point`
+ 		,`review`
+ 		,`createdAt`
+ 		,`updatedAt`
+ 	) VALUES (
+ 		#{storeId}
+ 		,#{menu}
+ 		,#{userName}
+ 		,#{point}
+ 		,#{review}
+ 		,now()
+ 		,now()
+ 	)
+ 	</insert>
+ 	
  </mapper>
