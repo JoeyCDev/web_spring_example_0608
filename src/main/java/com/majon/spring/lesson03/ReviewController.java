@@ -49,8 +49,29 @@ public class ReviewController {
 		return "입력 결과 : " + count;
 		
 		
+	}
+	
+	// id가 23 인 리뷰 내용을 "너무너무 맛있어요"
+	@RequestMapping("lesson03/ex03")
+	@ResponseBody
+	public String ex03(@RequestParam("id") int id,
+						@RequestParam("review") String review) {
 		
+		int count = reviewBO.updateReviewById(id, review);
+		
+		return "업데이트 개수 : " + count;
+
+	}
+	
+	// id가 23인 행 삭제
+	@RequestMapping("lesson03/ex04")
+	@ResponseBody
+	public String ex04(@RequestParam("id") int id) {
+		
+		int count = reviewBO.deleteReview(id);
+		
+		return "삭제 개수 : " + count;
 		
 	}
-
+	
 }
