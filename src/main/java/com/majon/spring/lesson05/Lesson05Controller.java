@@ -1,6 +1,7 @@
 package com.majon.spring.lesson05;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -51,6 +52,16 @@ public class Lesson05Controller {
 		model.addAttribute("users", users);
 		
 		return "lesson05/ex02";
+	}
+	
+	@GetMapping("/ex03")
+	public String ex03(Model model) {
+		
+		Date today = new Date();
+		
+		model.addAttribute("today", today);
+		
+		return "lesson05/ex03";
 	}
 	
 	
